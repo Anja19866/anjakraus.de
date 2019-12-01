@@ -1,0 +1,63 @@
+.header {
+    height: 85vh;
+    background-image: linear-gradient(
+        to bottom,
+        rgba($color-secondary-light, 0.8),
+        rgba($color-secondary-dark, 0.4)),
+    url(../img/back.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+        height: 95vh;
+    }
+
+    @include respond(M) {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 60vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 60vh, 0 100%);
+        height: 75vh;
+    }
+
+    @include respond(XS) {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    }
+
+    &__test {
+
+        color: white;
+    }
+ 
+    &__logo-box {
+        position: absolute;
+        top: 10rem;
+        left:  10rem;
+
+        @include respond(S) {
+           display: none;
+        }
+    }
+    
+    &__logo {
+        display: inline-block;
+        background-image: radial-gradient($color-secondary-light, $color-white, $color-white);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+    
+    &__text-box {
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .btn {
+        font-size: 2rem; 
+    }
+}

@@ -1,0 +1,29 @@
+.about {
+        
+    
+    &--moveInBottom {
+        animation: moveInBottom 1s; 
+    }
+
+    .data {
+        
+        li {
+            list-style: none;
+        }
+        
+        .tab {
+            display: inline-block;
+            width: 175px; 
+        }
+    }
+    
+    .portrait {
+        margin-top: -1.3rem;
+        text-align: center;
+        
+        &--moveInBottom {
+            animation: moveInBottom 2s ease-in;
+        }
+        
+    }
+}
